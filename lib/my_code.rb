@@ -5,7 +5,21 @@ def map(source_array)
     new_array.push(yield(source_array[index]))
     index += 1
   end
-  return new_array
+  new_array
 end
 
-def reduce()
+def reduce(source_array, starting_value = nil)
+  if starting_value
+    sum = starting_value
+    index = 0
+  else
+    sum = source_array[0]
+    index = 1
+  end
+  
+  while index < source_array.length
+   sum = yield(sum, array[index])
+   index += 1
+  end
+  sum
+end
