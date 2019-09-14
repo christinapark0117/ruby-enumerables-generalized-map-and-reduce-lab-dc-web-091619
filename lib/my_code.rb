@@ -8,9 +8,9 @@ def map(source_array)
   new_array
 end
 
-def reduce(array, sv = nil)
-  if sv
-    sum = sv
+def reduce(array, starting_value = nil)
+  if starting_value
+    sum = starting_value
     i = 0
   else
     sum = array[0]
